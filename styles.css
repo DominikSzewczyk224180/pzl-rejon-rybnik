@@ -315,23 +315,23 @@ ul{list-style:none}
 .about__visual{position:relative;opacity:0;transform:translateX(30px);transition:all .7s .15s ease}
 .about__visual.visible{opacity:1;transform:translateX(0)}
 .about__img-wrap{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
+.about__img-wrap.about__img-wrap--map{border-radius:0;overflow:visible;box-shadow:none;background:none}
 .about__img-wrap img{width:100%;height:400px;object-fit:cover;transition:transform var(--t-slow)}
 .about__img-wrap:hover img{transform:scale(1.04)}
 .about__img-wrap--map{
-  background:var(--cream);
   display:flex;
   align-items:center;
   justify-content:center;
-  padding:40px;
 }
 .about__img-wrap--map img{
   width:100%;
-  max-width:420px;
   height:auto;
   object-fit:contain;
   transition:transform var(--t-slow);
 }
-.about__img-wrap--map:hover img{transform:scale(1.04)}
+.about__img-wrap--map:hover img{transform:scale(1.03)}
+.about__img-wrap--map ~ .about__accent{display:none}
+.about__img-wrap--map ~ .about__badge{display:none}
 .about__accent{position:absolute;top:-14px;right:-14px;width:100px;height:100px;border:3px solid var(--brown);border-radius:var(--r-lg);z-index:-1}
 .about__badge{position:absolute;bottom:-16px;left:28px;background:var(--green-dark);color:var(--brown-pale);font-family:var(--f-accent);font-size:1.1rem;font-style:italic;font-weight:600;padding:12px 26px;border-radius:var(--r-md);box-shadow:var(--shadow-md)}
 
