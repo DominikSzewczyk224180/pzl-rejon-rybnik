@@ -324,12 +324,12 @@ ul{list-style:none}
   justify-content:center;
 }
 .about__img-wrap--map img{
-  width:130%;
-  max-width:130%;
+  width:220%;
+  max-width:220%;
   height:auto !important;
   object-fit:contain;
   transition:transform var(--t-slow);
-  margin-left:-15%;
+  margin-left:-60%;
 }
 .about__img-wrap--map:hover img{transform:scale(1.03)}
 .about__img-wrap--map ~ .about__accent{display:none}
