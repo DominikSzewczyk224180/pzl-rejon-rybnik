@@ -57,11 +57,10 @@ ul{list-style:none}
 .section-desc--light{color:var(--text-on-dark-muted)}
 
 /* ============================================
-   HEADER — all-green, compact, two layers
+   HEADER — top strip (scrolls away) + sticky nav
    ============================================ */
-.header{position:relative;z-index:1000}
 
-/* Top strip */
+/* Top strip — scrolls away naturally */
 .header__top{
   background:var(--green-deepest);
   padding:7px 0;
@@ -73,48 +72,41 @@ ul{list-style:none}
 .header__top-social a{color:var(--text-on-dark-muted);display:flex;transition:color var(--t-fast)}
 .header__top-social a:hover{color:var(--brown-pale)}
 
-/* Main header */
-.header__main{
+/* Sticky nav — stays at top */
+.sticknav{
   background:var(--green-dark);
-  padding:14px 0;
+  padding:12px 0;
   position:sticky;
   top:0;
   z-index:1000;
   box-shadow:0 2px 16px rgba(0,0,0,.2);
 }
-.header__main-inner{display:flex;align-items:center;justify-content:space-between}
+.sticknav__inner{display:flex;align-items:center;justify-content:space-between}
 
-.header__logo{display:flex;align-items:center;gap:14px}
-.header__logo-img{
-  width:54px;
-  height:auto;
-  object-fit:contain;
-  /* Make the dark-green logo visible on dark-green bg: invert to light/gold */
+.sticknav__logo{display:flex;align-items:center;gap:14px}
+.sticknav__logo-img{
+  width:50px;height:auto;object-fit:contain;
   filter:brightness(0) invert(1) sepia(1) saturate(.5) hue-rotate(15deg) brightness(1.5);
 }
-.header__logo-text{display:flex;flex-direction:column}
-.header__logo-small{font-family:var(--f-body);font-size:.7rem;font-weight:500;color:var(--brown-pale);letter-spacing:1.5px;text-transform:uppercase;line-height:1.3}
-.header__logo-big{font-family:var(--f-display);font-size:1.3rem;font-weight:700;color:#fff;line-height:1.2}
+.sticknav__logo-text{display:flex;flex-direction:column}
+.sticknav__logo-small{font-family:var(--f-body);font-size:.7rem;font-weight:500;color:var(--brown-pale);letter-spacing:1.5px;text-transform:uppercase;line-height:1.3}
+.sticknav__logo-big{font-family:var(--f-display);font-size:1.3rem;font-weight:700;color:#fff;line-height:1.2}
 
-/* Nav links */
-.header__nav{display:flex;align-items:center;gap:2px}
-.header__nav-link{
+.sticknav__links{display:flex;align-items:center;gap:2px}
+.sticknav__link{
   font-family:var(--f-body);font-size:.87rem;font-weight:500;color:var(--text-on-dark);
   padding:10px 18px;transition:all var(--t-fast);position:relative;letter-spacing:.3px;
   border-bottom:3px solid transparent;
 }
-.header__nav-link:hover,.header__nav-link.active{
-  color:#fff;
-  background:rgba(255,255,255,.06);
-}
-.header__nav-link.active{border-bottom-color:var(--brown)}
+.sticknav__link:hover,.sticknav__link.active{color:#fff;background:rgba(255,255,255,.06)}
+.sticknav__link.active{border-bottom-color:var(--brown)}
 
 /* Burger */
-.header__burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:1001}
-.header__burger span{width:26px;height:2px;background:var(--cream);transition:all var(--t-fast);border-radius:2px}
-.header__burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
-.header__burger.open span:nth-child(2){opacity:0}
-.header__burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.sticknav__burger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:1001}
+.sticknav__burger span{width:26px;height:2px;background:var(--cream);transition:all var(--t-fast);border-radius:2px}
+.sticknav__burger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.sticknav__burger.open span:nth-child(2){opacity:0}
+.sticknav__burger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
 
 /* ============================================
    HERO — BRIGHT IMAGE, left gradient only
@@ -316,7 +308,6 @@ ul{list-style:none}
 .about__content{opacity:0;transform:translateX(-30px);transition:all .7s ease}
 .about__content.visible{opacity:1;transform:translateX(0)}
 .about__text{font-size:1.02rem;color:var(--text-body);line-height:1.85;margin-bottom:14px}
-.about__text:first-of-type::first-letter{font-family:var(--f-display);font-size:3.2rem;font-weight:700;float:left;line-height:1;margin-right:10px;margin-top:4px;color:var(--green-dark)}
 .about__stats{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:30px}
 .about__stat{text-align:center;padding:16px 8px;border-radius:var(--r-md);background:var(--cream);border:1px solid rgba(28,52,28,.08)}
 .about__stat-num{font-family:var(--f-display);font-size:2rem;font-weight:700;color:var(--green-dark);line-height:1}
@@ -326,6 +317,10 @@ ul{list-style:none}
 .about__img-wrap{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
 .about__img-wrap img{width:100%;height:400px;object-fit:cover;transition:transform var(--t-slow)}
 .about__img-wrap:hover img{transform:scale(1.04)}
+.about__img-note{
+  text-align:center;font-size:.8rem;font-style:italic;
+  color:var(--text-muted);padding:10px 0 0;
+}
 .about__accent{position:absolute;top:-14px;right:-14px;width:100px;height:100px;border:3px solid var(--brown);border-radius:var(--r-lg);z-index:-1}
 .about__badge{position:absolute;bottom:-16px;left:28px;background:var(--green-dark);color:var(--brown-pale);font-family:var(--f-accent);font-size:1.1rem;font-style:italic;font-weight:600;padding:12px 26px;border-radius:var(--r-md);box-shadow:var(--shadow-md)}
 
@@ -444,18 +439,18 @@ ul{list-style:none}
 @media(max-width:768px){
   .header__top-text{font-size:.68rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:70vw}
   .header__top-social{display:none}
-  .header__logo-img{width:44px}
-  .header__logo-big{font-size:1.1rem}
+  .sticknav__logo-img{width:40px}
+  .sticknav__logo-big{font-size:1.1rem}
 
-  .header__nav{
+  .sticknav__links{
     position:fixed;top:0;right:-100%;width:280px;height:100vh;
     background:var(--green-deepest);flex-direction:column;
     padding:90px 28px 40px;gap:0;transition:right var(--t-med);
     box-shadow:-8px 0 30px rgba(0,0,0,.4);z-index:9999;
   }
-  .header__nav.open{right:0}
-  .header__nav-link{width:100%;padding:14px 16px;font-size:1rem;border-bottom:none !important}
-  .header__burger{display:flex;z-index:10000}
+  .sticknav__links.open{right:0}
+  .sticknav__link{width:100%;padding:14px 16px;font-size:1rem;border-bottom:none !important}
+  .sticknav__burger{display:flex;z-index:10000}
 
   .hero{height:50vh;min-height:340px}
   .hero__gradient{
