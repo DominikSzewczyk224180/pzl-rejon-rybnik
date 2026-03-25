@@ -316,6 +316,7 @@ ul{list-style:none}
 .about__visual.visible{opacity:1;transform:translateX(0)}
 .about__img-wrap{border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-lg)}
 .about__img-wrap.about__img-wrap--map{border-radius:0;overflow:visible;box-shadow:none;background:none}
+.about__visual:has(.about__img-wrap--map){overflow:hidden}
 .about__img-wrap img{width:100%;height:400px;object-fit:cover;transition:transform var(--t-slow)}
 .about__img-wrap:hover img{transform:scale(1.04)}
 .about__img-wrap--map{
@@ -329,7 +330,7 @@ ul{list-style:none}
   height:auto !important;
   object-fit:contain;
   transition:transform var(--t-slow);
-  margin-left:-60%;
+  margin-left:0;
 }
 .about__img-wrap--map:hover img{transform:scale(1.03)}
 .about__img-wrap--map ~ .about__accent{display:none}
