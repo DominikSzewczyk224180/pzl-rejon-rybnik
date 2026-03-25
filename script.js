@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Active nav on scroll
   const sections = document.querySelectorAll('section[id]');
   function updateActiveNav() {
-    const y = window.scrollY + 140;
+    const y = window.scrollY + (document.getElementById('header')?.offsetHeight || 140);
     sections.forEach(s => {
       const top = s.offsetTop, h = s.offsetHeight, id = s.id;
       if (y >= top && y < top + h) {
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (id === '#') return;
       const el = document.querySelector(id);
       if (el) {
-        const offset = document.querySelector('.header__main')?.offsetHeight || 0;
+        const offset = document.getElementById('header')?.offsetHeight || 0;
         window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset - 10, behavior: 'smooth' });
       }
     });

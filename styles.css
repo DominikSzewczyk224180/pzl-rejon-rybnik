@@ -59,7 +59,7 @@ ul{list-style:none}
 /* ============================================
    HEADER — all-green, compact, two layers
    ============================================ */
-.header{position:relative;z-index:100}
+.header{position:sticky;top:0;z-index:1000;box-shadow:0 2px 16px rgba(0,0,0,.15)}
 
 /* Top strip */
 .header__top{
@@ -77,10 +77,6 @@ ul{list-style:none}
 .header__main{
   background:var(--green-dark);
   padding:14px 0;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  box-shadow:0 2px 16px rgba(0,0,0,.2);
 }
 .header__main-inner{display:flex;align-items:center;justify-content:space-between}
 
@@ -134,8 +130,8 @@ ul{list-style:none}
   height:100%;
   object-fit:cover;
   object-position:70% 30%;
-  /* KEY: keep the image bright and warm — only very slight tweak */
-  filter:brightness(.85) saturate(1.15) contrast(1.05);
+  /* Bright & warm — show the pheasant's golden colors */
+  filter:brightness(.95) saturate(1.2) contrast(1.03);
   transform:scale(1.02);
   transition:transform 5s ease-out;
 }
@@ -168,8 +164,8 @@ ul{list-style:none}
 
 .hero__org{
   font-family:var(--f-body);
-  font-size:.88rem;
-  font-weight:500;
+  font-size:1rem;
+  font-weight:600;
   color:var(--brown-pale);
   letter-spacing:1.5px;
   text-transform:uppercase;
@@ -179,21 +175,21 @@ ul{list-style:none}
 
 .hero__title{
   font-family:var(--f-display);
-  font-size:clamp(2rem,4.5vw,3.2rem);
+  font-size:clamp(2.6rem,5.5vw,4.2rem);
   font-weight:700;
   color:#fff;
   line-height:1.15;
-  text-shadow:0 2px 16px rgba(0,0,0,.5), 0 1px 3px rgba(0,0,0,.4);
+  text-shadow:0 2px 20px rgba(0,0,0,.7), 0 1px 4px rgba(0,0,0,.5);
 }
 
 .hero__subtitle{
   font-family:var(--f-display);
-  font-size:clamp(1.6rem,3.5vw,2.6rem);
+  font-size:clamp(2.2rem,4.5vw,3.4rem);
   font-weight:700;
   color:#fff;
   line-height:1.15;
   margin-top:2px;
-  text-shadow:0 2px 16px rgba(0,0,0,.5), 0 1px 3px rgba(0,0,0,.4);
+  text-shadow:0 2px 20px rgba(0,0,0,.7), 0 1px 4px rgba(0,0,0,.5);
 }
 
 .hero__line{
@@ -207,7 +203,7 @@ ul{list-style:none}
 
 .hero__motto{
   font-family:var(--f-accent);
-  font-size:clamp(1.4rem,2.5vw,2rem);
+  font-size:clamp(1.6rem,3vw,2.4rem);
   font-weight:600;
   font-style:italic;
   color:var(--brown-cream);
@@ -433,8 +429,8 @@ ul{list-style:none}
         transparent 40%
       ) !important;
   }
-  .hero__title{font-size:1.6rem}
-  .hero__subtitle{font-size:1.3rem}
+  .hero__title{font-size:2rem}
+  .hero__subtitle{font-size:1.7rem}
 
   .quicklinks__row{grid-template-columns:repeat(3,1fr)}
   .ql{padding:14px 6px;font-size:.72rem}
