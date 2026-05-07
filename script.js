@@ -104,18 +104,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.addEventListener('scroll', animCounters, { passive: true });
 
-  // Obwody panel toggle
-  const obwodyTrigger = document.getElementById('obwodyTrigger');
-  const obwodyPanel = document.getElementById('obwodyPanel');
-  if (obwodyTrigger && obwodyPanel) {
-    obwodyTrigger.addEventListener('click', () => {
-      obwodyPanel.classList.toggle('open');
-      obwodyTrigger.classList.toggle('panel-open');
-      if (obwodyPanel.classList.contains('open')) {
-        setTimeout(() => obwodyPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
-      }
+  // Obwody cards — click to expand, click again to collapse
+  document.querySelectorAll('.ok').forEach(card => {
+    card.querySelector('.ok__head').addEventListener('click', () => {
+      const wasOpen = card.classList.contains('open');
+      // Close all others
+      document.querySelectorAll('.ok.open').forEach(c => c.classList.remove('open'));
+      // Toggle clicked
+      if (!wasOpen) card.classList.add('open');
     });
-  }
+  });
 
   // Subtle parallax
   let ticking = false;
