@@ -329,10 +329,13 @@ ul{list-style:none}
   gap:14px;
 }
 .ok__nr{
-  font-family:var(--f-display);font-size:.95rem;font-weight:700;
+  font-family:var(--f-body);font-size:1rem;font-weight:700;
   color:var(--green-dark);background:rgba(28,52,28,.06);
-  padding:4px 10px;border-radius:var(--r-sm);
+  padding:6px 12px;border-radius:var(--r-sm);
   white-space:nowrap;flex-shrink:0;
+  letter-spacing:.5px;
+  border:1px solid rgba(28,52,28,.1);
+  min-width:48px;text-align:center;
 }
 .ok__info{flex:1;min-width:0}
 .ok__name{
@@ -505,7 +508,7 @@ ul{list-style:none}
    ============================================ */
 .contact{padding:90px 0;background:var(--green-dark);position:relative}
 .contact::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--brown),transparent)}
-.contact__inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.contact__inner{display:grid;grid-template-columns:1fr;max-width:600px;margin:0 auto}
 .contact__info{opacity:0;transform:translateX(-30px);transition:all .7s ease}
 .contact__info.visible{opacity:1;transform:translateX(0)}
 .contact__detail{display:flex;gap:14px;margin-bottom:24px}

@@ -71,23 +71,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Contact form
-  const form = document.getElementById('contactForm');
-  if (form) {
-    form.addEventListener('submit', function (e) {
-      e.preventDefault();
-      const btn = this.querySelector('.btn-submit');
-      const orig = btn.innerHTML;
-      btn.textContent = 'Wysyłanie...';
-      btn.style.opacity = '.7'; btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = '✓ Wysłano!';
-        btn.style.background = '#2a4d2a'; btn.style.opacity = '1';
-        setTimeout(() => { btn.innerHTML = orig; btn.style.background = ''; btn.disabled = false; form.reset(); }, 2500);
-      }, 1200);
-    });
-  }
-
   // Counter animation
   const stats = document.querySelectorAll('.about__stat-num');
   let counted = false;
