@@ -104,14 +104,16 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.addEventListener('scroll', animCounters, { passive: true });
 
-  // Modal close on overlay click / ESC
-  const modal = document.getElementById('obwodyModal');
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) modal.classList.remove('open');
-    });
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') modal.classList.remove('open');
+  // Obwody panel toggle
+  const obwodyTrigger = document.getElementById('obwodyTrigger');
+  const obwodyPanel = document.getElementById('obwodyPanel');
+  if (obwodyTrigger && obwodyPanel) {
+    obwodyTrigger.addEventListener('click', () => {
+      obwodyPanel.classList.toggle('open');
+      obwodyTrigger.classList.toggle('panel-open');
+      if (obwodyPanel.classList.contains('open')) {
+        setTimeout(() => obwodyPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' }), 100);
+      }
     });
   }
 

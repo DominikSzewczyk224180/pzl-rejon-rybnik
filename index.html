@@ -72,14 +72,14 @@
   <div class="highlights">
     <div class="container highlights__row">
 
-      <!-- LEFT: Obwody łowieckie (otwiera modal) -->
-      <div class="hl-card" onclick="document.getElementById('obwodyModal').classList.add('open')" style="cursor:pointer">
+      <!-- LEFT: Obwody łowieckie (rozwija panel) -->
+      <div class="hl-card" id="obwodyTrigger" style="cursor:pointer">
         <div class="hl-card__icon">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
         </div>
         <div class="hl-card__body">
           <div class="hl-card__tag">Obwody łowieckie</div>
-          <div class="hl-card__title">Znajdź swój obwód</div>
+          <div class="hl-card__title">Znajdź swój obwód <svg class="hl-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></div>
           <div class="hl-card__desc">Problem z dzikami lub inną zwierzyną? Sprawdź, który obwód obejmuje Twój teren i skontaktuj się bezpośrednio.</div>
         </div>
       </div>
@@ -107,6 +107,173 @@
         </div>
       </a>
 
+    </div>
+  </div>
+
+  <!-- ========== OBWODY PANEL (rozwija się) ========== -->
+  <div class="obwody-panel" id="obwodyPanel">
+    <div class="container">
+      <div class="obwody-panel__header">
+        <h3 class="obwody-panel__title">Koła łowieckie Rejonu Rybnickiego</h3>
+        <p class="obwody-panel__desc">Kliknij „Mapa" aby pobrać mapę obwodu (PDF). Numery telefonów prowadzą do łowczych poszczególnych kół.</p>
+      </div>
+      <div class="obwody-grid">
+
+        <div class="ok-card">
+          <div class="ok-card__num">131</div>
+          <div class="ok-card__body">
+            <div class="ok-card__name">KŁ „Cyranka"</div>
+            <div class="ok-card__loc">Knurów i okolice</div>
+            <div class="ok-card__contact"><a href="tel:+48602124165">602 124 165</a></div>
+            <div class="ok-card__email"><a href="mailto:cyranka.knurow@gmail.com">cyranka.knurow@gmail.com</a></div>
+          </div>
+          <a href="mapy/m131.pdf" target="_blank" class="ok-card__map">Mapa</a>
+        </div>
+
+        <div class="ok-card">
+          <div class="ok-card__num">132</div>
+          <div class="ok-card__body">
+            <div class="ok-card__name">KŁ „Żbik"</div>
+            <div class="ok-card__loc">Zabrze (lasy rejonu rybnickiego)</div>
+            <div class="ok-card__contact"><a href="tel:+48603671285">603 671 285</a></div>
+            <div class="ok-card__email"><a href="mailto:zbik.zabrze@op.pl">zbik.zabrze@op.pl</a></div>
+          </div>
+          <a href="mapy/m132.pdf" target="_blank" class="ok-card__map">Mapa</a>
+        </div>
+
+        <div class="ok-card">
+          <div class="ok-card__num">133, 173</div>
+          <div class="ok-card__body">
+            <div class="ok-card__name">KŁ „Łoś"</div>
+            <div class="ok-card__loc">Racibórz</div>
+            <div class="ok-card__contact"><a href="tel:+48508178781">508 178 781</a></div>
+            <div class="ok-card__email"><a href="mailto:tadeuszutrata@gmail.com">tadeuszutrata@gmail.com</a></div>
+          </div>
+          <a href="mapy/m133.pdf" target="_blank" class="ok-card__map">Mapa</a>
+        </div>
+
+        <div class="ok-card">
+          <div class="ok-card__num">140</div>
+          <div class="ok-card__body">
+            <div class="ok-card__name">KŁ „Szarak"</div>
+            <div class="ok-card__loc">Knurów i okolice</div>
+            <div class="ok-card__contact"><a href="tel:+48601462708">601 462 708</a></div>
+            <div class="ok-card__email"><a href="mailto:skretariat@szarakknurow.pl">skretariat@szarakknurow.pl</a></div>
+          </div>
+          <a href="mapy/m140.pdf" target="_blank" class="ok-card__map">Mapa</a>
+        </div>
+
+        <div class="ok-card">
+          <div class="ok-card__num">142</div>
+          <div class="ok-card__body">
+            <div class="ok-card__name">KŁ „Pod Bukiem"</div>
+            <div class="ok-card__loc">Rybnik (Paruszowiec, Grabownia, Książenice)</div>
+            <div class="ok-card__contact"><a href="tel:+48501391740">501 391 740</a></div>
+            <div class="ok-card__email"><a href="mailto:kolopodbukiem@tlen.pl">kolopodbukiem@tlen.pl</a></div>
+          </div>
+          <a href="mapy/m142.pdf" target="_blank" class="ok-card__map">Mapa</a>
+        </div>
+
+        <div class="ok-card">
+          <div class="ok-card__num">143, 152</div>
+          <div class="ok-card__body">
+            <div class="ok-card__name">KŁ „Odyniec"</div>
+            <div class="ok-card__loc">Rudy Raciborskie, lasy rudzkie</div>
+            <div class="ok-card__contact"><a href="tel:+48501544040">501 544 040</a></div>
+            <div class="ok-card__email"><a href="mailto:odyniec.rudy@o2.pl">odyniec.rudy@o2.pl</a></div>
+          </div>
+          <a href="mapy/m143.pdf" target="_blank" class="ok-card__map">Mapa</a>
+        </div>
+
+        <div class="ok-card">
+          <div class="ok-card__num">148</div>
+          <div class="ok-card__body">
+            <div class="ok-card__name">KŁ „Raróg"</div>
+            <div class="ok-card__loc">Katowice / Orzesze (pod Rybnikiem)</div>
+            <div class="ok-card__contact"><a href="tel:+48502233460">502 233 460</a></div>
+            <div class="ok-card__email"><a href="mailto:rarogkatowice@op.pl">rarogkatowice@op.pl</a></div>
+          </div>
+          <a href="mapy/m148.pdf" target="_blank" class="ok-card__map">Mapa</a>
+        </div>
+
+        <div class="ok-card">
+          <div class="ok-card__num">150</div>
+          <div class="ok-card__body">
+            <div class="ok-card__name">KŁ „Jaźwiec"</div>
+            <div class="ok-card__loc">Jejkowice (wzdłuż rz. Rudy)</div>
+            <div class="ok-card__contact"><a href="tel:+48696465528">696 465 528</a></div>
+            <div class="ok-card__email"><a href="mailto:jazwiecjejkowice@gmail.com">jazwiecjejkowice@gmail.com</a></div>
+          </div>
+          <a href="mapy/m150.pdf" target="_blank" class="ok-card__map">Mapa</a>
+        </div>
+
+        <div class="ok-card">
+          <div class="ok-card__num">151</div>
+          <div class="ok-card__body">
+            <div class="ok-card__name">KŁ „Borki"</div>
+            <div class="ok-card__loc">Lyski, gmina Nędza</div>
+            <div class="ok-card__contact"><a href="tel:+48600379813">600 379 813</a></div>
+            <div class="ok-card__email"><a href="mailto:wadera58@o2.pl">wadera58@o2.pl</a></div>
+          </div>
+          <a href="mapy/m151.pdf" target="_blank" class="ok-card__map">Mapa</a>
+        </div>
+
+        <div class="ok-card">
+          <div class="ok-card__num">159</div>
+          <div class="ok-card__body">
+            <div class="ok-card__name">KŁ „Las"</div>
+            <div class="ok-card__loc">Jastrzębie-Zdrój, lasy jastrzębskie</div>
+            <div class="ok-card__contact"><a href="tel:+48606288808">606 288 808</a></div>
+            <div class="ok-card__email"><a href="mailto:las.jastrzebie@onet.pl">las.jastrzebie@onet.pl</a></div>
+          </div>
+          <a href="mapy/m159.pdf" target="_blank" class="ok-card__map">Mapa</a>
+        </div>
+
+        <div class="ok-card">
+          <div class="ok-card__num">161</div>
+          <div class="ok-card__body">
+            <div class="ok-card__name">KŁ „Pod Klonem"</div>
+            <div class="ok-card__loc">Świerklany, Marklowice, Mszana</div>
+            <div class="ok-card__contact"><a href="tel:+48601188648">601 188 648</a></div>
+            <div class="ok-card__email"><a href="mailto:klpodklonem@gmail.com">klpodklonem@gmail.com</a></div>
+          </div>
+          <a href="mapy/m161.pdf" target="_blank" class="ok-card__map">Mapa</a>
+        </div>
+
+        <div class="ok-card">
+          <div class="ok-card__num">162</div>
+          <div class="ok-card__body">
+            <div class="ok-card__name">KŁ „Lis"</div>
+            <div class="ok-card__loc">Pszów, Radlin, Rydułtowy</div>
+            <div class="ok-card__contact"><a href="tel:+48510132174">510 132 174</a></div>
+            <div class="ok-card__email"><a href="mailto:kolo.lowieckie.lis.pszow@gmail.com">kolo.lowieckie.lis.pszow@gmail.com</a></div>
+          </div>
+          <a href="mapy/m162.pdf" target="_blank" class="ok-card__map">Mapa</a>
+        </div>
+
+        <div class="ok-card">
+          <div class="ok-card__num">163</div>
+          <div class="ok-card__body">
+            <div class="ok-card__name">KŁ „Odra"</div>
+            <div class="ok-card__loc">Rybnik / Wodzisław Śl. (płd.-zach.)</div>
+            <div class="ok-card__contact"><a href="tel:+48601445233">601 445 233</a></div>
+            <div class="ok-card__email"><a href="mailto:biuro@ceramot.pl">biuro@ceramot.pl</a></div>
+          </div>
+          <a href="mapy/m163.pdf" target="_blank" class="ok-card__map">Mapa</a>
+        </div>
+
+        <div class="ok-card">
+          <div class="ok-card__num">164</div>
+          <div class="ok-card__body">
+            <div class="ok-card__name">KŁ „Bażant"</div>
+            <div class="ok-card__loc">Racibórz</div>
+            <div class="ok-card__contact"><a href="tel:+48600811501">600 811 501</a></div>
+            <div class="ok-card__email"><a href="mailto:stefan.cieply2@gmail.com">stefan.cieply2@gmail.com</a></div>
+          </div>
+          <a href="mapy/m164.pdf" target="_blank" class="ok-card__map">Mapa</a>
+        </div>
+
+      </div>
     </div>
   </div>
 
@@ -227,136 +394,7 @@
     </div>
   </footer>
 
-  <!-- ========== MODAL: OBWODY ========== -->
-  <div class="modal-overlay" id="obwodyModal">
-    <div class="modal">
-      <div class="modal__header">
-        <div>
-          <h2 class="modal__title">Obwody łowieckie – Rejon Rybnicki</h2>
-          <p class="modal__subtitle">Kliknij w mapę przy obwodzie, aby zobaczyć szczegółową mapę terenu (PDF)</p>
-        </div>
-        <button class="modal__close" onclick="this.closest('.modal-overlay').classList.remove('open')" aria-label="Zamknij">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg>
-        </button>
-      </div>
-      <div class="modal__body">
-
-        <div class="obwod-row">
-          <div class="obwod-row__info">
-            <span class="obwod-row__num">131</span>
-            <div><div class="obwod-row__name">KŁ „Cyranka"</div><div class="obwod-row__contact"><a href="tel:+48602124165">602 124 165</a> · <a href="mailto:cyranka.knurow@gmail.com">cyranka.knurow@gmail.com</a></div></div>
-          </div>
-          <a href="mapy/m131.pdf" target="_blank" class="obwod-row__map">Mapa PDF</a>
-        </div>
-
-        <div class="obwod-row">
-          <div class="obwod-row__info">
-            <span class="obwod-row__num">132</span>
-            <div><div class="obwod-row__name">KŁ „Żbik"</div><div class="obwod-row__contact"><a href="tel:+48603671285">603 671 285</a> · <a href="mailto:zbik.zabrze@op.pl">zbik.zabrze@op.pl</a></div></div>
-          </div>
-          <a href="mapy/m132.pdf" target="_blank" class="obwod-row__map">Mapa PDF</a>
-        </div>
-
-        <div class="obwod-row">
-          <div class="obwod-row__info">
-            <span class="obwod-row__num">133, 173</span>
-            <div><div class="obwod-row__name">KŁ „Łoś"</div><div class="obwod-row__contact"><a href="tel:+48508178781">508 178 781</a> · <a href="mailto:tadeuszutrata@gmail.com">tadeuszutrata@gmail.com</a></div></div>
-          </div>
-          <a href="mapy/m133.pdf" target="_blank" class="obwod-row__map">Mapa PDF</a>
-        </div>
-
-        <div class="obwod-row">
-          <div class="obwod-row__info">
-            <span class="obwod-row__num">140</span>
-            <div><div class="obwod-row__name">KŁ „Szarak"</div><div class="obwod-row__contact"><a href="tel:+48601462708">601 462 708</a> · <a href="mailto:skretariat@szarakknurow.pl">skretariat@szarakknurow.pl</a></div></div>
-          </div>
-          <a href="mapy/m140.pdf" target="_blank" class="obwod-row__map">Mapa PDF</a>
-        </div>
-
-        <div class="obwod-row">
-          <div class="obwod-row__info">
-            <span class="obwod-row__num">142</span>
-            <div><div class="obwod-row__name">KŁ „Pod Bukiem"</div><div class="obwod-row__contact"><a href="tel:+48501391740">501 391 740</a> · <a href="mailto:kolopodbukiem@tlen.pl">kolopodbukiem@tlen.pl</a></div></div>
-          </div>
-          <a href="mapy/m142.pdf" target="_blank" class="obwod-row__map">Mapa PDF</a>
-        </div>
-
-        <div class="obwod-row">
-          <div class="obwod-row__info">
-            <span class="obwod-row__num">143, 152</span>
-            <div><div class="obwod-row__name">KŁ „Odyniec"</div><div class="obwod-row__contact"><a href="tel:+48501544040">501 544 040</a> · <a href="mailto:odyniec.rudy@o2.pl">odyniec.rudy@o2.pl</a></div></div>
-          </div>
-          <a href="mapy/m143.pdf" target="_blank" class="obwod-row__map">Mapa PDF</a>
-        </div>
-
-        <div class="obwod-row">
-          <div class="obwod-row__info">
-            <span class="obwod-row__num">148</span>
-            <div><div class="obwod-row__name">KŁ „Raróg"</div><div class="obwod-row__contact"><a href="tel:+48502233460">502 233 460</a> · <a href="mailto:rarogkatowice@op.pl">rarogkatowice@op.pl</a></div></div>
-          </div>
-          <a href="mapy/m148.pdf" target="_blank" class="obwod-row__map">Mapa PDF</a>
-        </div>
-
-        <div class="obwod-row">
-          <div class="obwod-row__info">
-            <span class="obwod-row__num">150</span>
-            <div><div class="obwod-row__name">KŁ „Jaźwiec"</div><div class="obwod-row__contact"><a href="tel:+48696465528">696 465 528</a> · <a href="mailto:jazwiecjejkowice@gmail.com">jazwiecjejkowice@gmail.com</a></div></div>
-          </div>
-          <a href="mapy/m150.pdf" target="_blank" class="obwod-row__map">Mapa PDF</a>
-        </div>
-
-        <div class="obwod-row">
-          <div class="obwod-row__info">
-            <span class="obwod-row__num">151</span>
-            <div><div class="obwod-row__name">KŁ „Borki"</div><div class="obwod-row__contact"><a href="tel:+48600379813">600 379 813</a> · <a href="mailto:wadera58@o2.pl">wadera58@o2.pl</a></div></div>
-          </div>
-          <a href="mapy/m151.pdf" target="_blank" class="obwod-row__map">Mapa PDF</a>
-        </div>
-
-        <div class="obwod-row">
-          <div class="obwod-row__info">
-            <span class="obwod-row__num">159</span>
-            <div><div class="obwod-row__name">KŁ „Las"</div><div class="obwod-row__contact"><a href="tel:+48606288808">606 288 808</a> · <a href="mailto:las.jastrzebie@onet.pl">las.jastrzebie@onet.pl</a></div></div>
-          </div>
-          <a href="mapy/m159.pdf" target="_blank" class="obwod-row__map">Mapa PDF</a>
-        </div>
-
-        <div class="obwod-row">
-          <div class="obwod-row__info">
-            <span class="obwod-row__num">161</span>
-            <div><div class="obwod-row__name">KŁ „Pod Klonem"</div><div class="obwod-row__contact"><a href="tel:+48601188648">601 188 648</a> · <a href="mailto:klpodklonem@gmail.com">klpodklonem@gmail.com</a></div></div>
-          </div>
-          <a href="mapy/m161.pdf" target="_blank" class="obwod-row__map">Mapa PDF</a>
-        </div>
-
-        <div class="obwod-row">
-          <div class="obwod-row__info">
-            <span class="obwod-row__num">162</span>
-            <div><div class="obwod-row__name">KŁ „Lis"</div><div class="obwod-row__contact"><a href="tel:+48510132174">510 132 174</a> · <a href="mailto:kolo.lowieckie.lis.pszow@gmail.com">kolo.lowieckie.lis.pszow@gmail.com</a></div></div>
-          </div>
-          <a href="mapy/m162.pdf" target="_blank" class="obwod-row__map">Mapa PDF</a>
-        </div>
-
-        <div class="obwod-row">
-          <div class="obwod-row__info">
-            <span class="obwod-row__num">163</span>
-            <div><div class="obwod-row__name">KŁ „Odra"</div><div class="obwod-row__contact"><a href="tel:+48601445233">601 445 233</a> · <a href="mailto:biuro@ceramot.pl">biuro@ceramot.pl</a></div></div>
-          </div>
-          <a href="mapy/m163.pdf" target="_blank" class="obwod-row__map">Mapa PDF</a>
-        </div>
-
-        <div class="obwod-row">
-          <div class="obwod-row__info">
-            <span class="obwod-row__num">164</span>
-            <div><div class="obwod-row__name">KŁ „Bażant"</div><div class="obwod-row__contact"><a href="tel:+48600811501">600 811 501</a> · <a href="mailto:stefan.cieply2@gmail.com">stefan.cieply2@gmail.com</a></div></div>
-          </div>
-          <a href="mapy/m164.pdf" target="_blank" class="obwod-row__map">Mapa PDF</a>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
+  
   <script src="script.js"></script>
 </body>
 </html>
