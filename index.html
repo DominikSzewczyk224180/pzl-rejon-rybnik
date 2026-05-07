@@ -487,7 +487,114 @@
     </div>
   </footer>
 
-  
+  <!-- ========== ADMIN BUTTON (bottom-right corner) ========== -->
+  <button class="admin-btn-fab" id="adminBtn" title="Panel administratora" aria-label="Panel administratora">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+  </button>
+
+  <!-- ========== LOGIN MODAL ========== -->
+  <div class="modal-overlay" id="loginModal">
+    <div class="modal modal--small">
+      <div class="modal__header">
+        <h2 class="modal__title">Logowanie do panelu</h2>
+        <button class="modal__close" data-close-modal aria-label="Zamknij"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      </div>
+      <form class="modal__body" id="loginForm">
+        <div class="form-field">
+          <label for="loginPassword">Hasło administratora</label>
+          <input type="password" id="loginPassword" required autocomplete="current-password">
+        </div>
+        <p class="form-error" id="loginError"></p>
+        <button type="submit" class="form-btn form-btn--primary">Zaloguj się</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ========== ADMIN PANEL MODAL ========== -->
+  <div class="modal-overlay" id="adminModal">
+    <div class="modal modal--large">
+      <div class="modal__header">
+        <h2 class="modal__title">Panel administratora</h2>
+        <div style="display:flex;gap:12px;align-items:center">
+          <button class="form-btn form-btn--ghost" id="logoutBtn">Wyloguj</button>
+          <button class="modal__close" data-close-modal aria-label="Zamknij"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+        </div>
+      </div>
+      <div class="modal__body">
+        <!-- Form -->
+        <form class="admin-form" id="newsForm">
+          <h3 class="admin-form__title" id="newsFormTitle">Dodaj aktualność</h3>
+          <input type="hidden" id="newsId">
+          <input type="hidden" id="newsImageExisting">
+
+          <div class="form-field">
+            <label for="newsTitle">Tytuł *</label>
+            <input type="text" id="newsTitle" required maxlength="300">
+          </div>
+
+          <div class="form-field">
+            <label for="newsShortDesc">Krótki opis (na karcie)</label>
+            <input type="text" id="newsShortDesc" maxlength="500" placeholder="Jeśli pusty, użyje początku opisu">
+          </div>
+
+          <div class="form-field">
+            <label for="newsDescription">Pełny opis *</label>
+            <textarea id="newsDescription" required rows="5" placeholder="Treść aktualności..."></textarea>
+          </div>
+
+          <div class="form-row-2">
+            <div class="form-field">
+              <label for="newsEventDate">Data wydarzenia (opcjonalnie)</label>
+              <input type="datetime-local" id="newsEventDate">
+              <small>Jeśli ustawisz przyszłą datę, pojawi się jako „Najbliższe wydarzenie"</small>
+            </div>
+            <div class="form-field">
+              <label for="newsLocation">Miejsce (opcjonalnie)</label>
+              <input type="text" id="newsLocation" maxlength="300" placeholder="np. Czerwionka-Leszczyny">
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="newsImage">Zdjęcie (opcjonalnie, max ~5 MB)</label>
+            <input type="file" id="newsImage" accept="image/*">
+            <img id="newsImagePreview" class="image-preview" style="display:none" alt="Podgląd">
+          </div>
+
+          <div style="display:flex;gap:10px;margin-top:8px">
+            <button type="submit" class="form-btn form-btn--primary">Zapisz</button>
+            <button type="button" class="form-btn form-btn--ghost" id="resetFormBtn">Wyczyść formularz</button>
+          </div>
+        </form>
+
+        <!-- News list -->
+        <div class="admin-list">
+          <h3 class="admin-form__title">Istniejące aktualności</h3>
+          <div id="adminNewsList"><p class="admin-loading">Ładowanie...</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== NEWS DETAIL MODAL (public) ========== -->
+  <div class="modal-overlay" id="newsModal">
+    <div class="modal modal--large">
+      <div class="modal__header">
+        <div></div>
+        <button class="modal__close" data-close-modal aria-label="Zamknij"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+      </div>
+      <div class="modal__body news-modal-body">
+        <img id="newsModalImg" class="news-modal__img" alt="">
+        <div class="news-modal__date" id="newsModalDate"></div>
+        <h2 class="news-modal__title" id="newsModalTitle"></h2>
+        <div class="news-modal__event" id="newsModalEvent" style="display:none">
+          <span><strong>Data:</strong> <span id="newsModalEventDate"></span></span>
+          <span><strong>Miejsce:</strong> <span id="newsModalEventLoc"></span></span>
+        </div>
+        <div class="news-modal__desc" id="newsModalDesc"></div>
+      </div>
+    </div>
+  </div>
+
   <script src="script.js"></script>
 </body>
 </html>
