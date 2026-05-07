@@ -329,13 +329,16 @@ ul{list-style:none}
   gap:14px;
 }
 .ok__nr{
-  font-family:var(--f-body);font-size:.85rem;font-weight:700;
+  font-family:'Inter','Segoe UI',system-ui,sans-serif;
+  font-size:.88rem;font-weight:700;
   color:var(--green-dark);background:rgba(28,52,28,.06);
   padding:6px 12px;border-radius:var(--r-sm);
   white-space:nowrap;flex-shrink:0;
   letter-spacing:.3px;
   border:1px solid rgba(28,52,28,.1);
   text-align:center;
+  font-variant-numeric:lining-nums tabular-nums;
+  font-feature-settings:"lnum" 1, "tnum" 1;
 }
 .ok__info{flex:1;min-width:0}
 .ok__name{
