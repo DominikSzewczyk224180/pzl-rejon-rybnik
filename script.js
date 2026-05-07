@@ -104,6 +104,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }
   window.addEventListener('scroll', animCounters, { passive: true });
 
+  // Modal close on overlay click / ESC
+  const modal = document.getElementById('obwodyModal');
+  if (modal) {
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) modal.classList.remove('open');
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') modal.classList.remove('open');
+    });
+  }
+
   // Subtle parallax
   let ticking = false;
   window.addEventListener('scroll', () => {
