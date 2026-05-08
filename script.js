@@ -120,8 +120,13 @@ document.addEventListener('DOMContentLoaded', () => {
    PANEL ADMINA + DYNAMICZNE AKTUALNOŚCI
    ============================================================ */
 
+<<<<<<< HEAD
 // ===== KONFIGURACJA — zmień to po wdrożeniu backendu na Railway =====
 const API_BASE = 'https://YOUR-RAILWAY-APP.up.railway.app';
+=======
+// ===== KONFIGURACJA — zmień to po wdrożeniu backendu  =====
+const API_BASE = 'https://api.pzlregionrybnicki.pl';
+>>>>>>> c1965876c3a64fb8006bff5bd8825c5097172084
 // =====================================================================
 
 const TOKEN_KEY = 'pzl_admin_token';
