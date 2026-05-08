@@ -121,7 +121,7 @@ document.addEventListener('DOMContentLoaded', () => {
    ============================================================ */
 
 // ===== KONFIGURACJA — zmień to po wdrożeniu backendu  =====
-const API_BASE = 'https://api.pzlregionrybnik.pl';
+const API_BASE = 'https://api.pzlregionrybnicki.pl';
 // =====================================================================
 
 const TOKEN_KEY = 'pzl_admin_token';
