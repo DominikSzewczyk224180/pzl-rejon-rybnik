@@ -173,10 +173,19 @@ function closeAllModals() {
 
 // ----- modal close handlers -----
 document.querySelectorAll('[data-close-modal]').forEach(btn => {
-  btn.addEventListener('click', () => btn.closest('.modal-overlay').classList.remove('open'));
+  btn.addEventListener('click', () => {
+    const overlay = btn.closest('.modal-overlay');
+    if (overlay) overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  });
 });
 document.querySelectorAll('.modal-overlay').forEach(ov => {
-  ov.addEventListener('click', (e) => { if (e.target === ov) ov.classList.remove('open'); });
+  ov.addEventListener('click', (e) => {
+    if (e.target === ov) {
+      ov.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+  });
 });
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAllModals(); });
 
