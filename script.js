@@ -120,8 +120,8 @@ document.addEventListener('DOMContentLoaded', () => {
    PANEL ADMINA + DYNAMICZNE AKTUALNOŚCI
    ============================================================ */
 
-// ===== KONFIGURACJA — zmień to po wdrożeniu backendu  =====
-const API_BASE = 'https://api.pzlregionrybnik.pl';
+// ===== KONFIGURACJA — zmień to po wdrożeniu backendu na Railway =====
+const API_BASE = 'https://YOUR-RAILWAY-APP.up.railway.app';
 // =====================================================================
 
 const TOKEN_KEY = 'pzl_admin_token';
@@ -181,6 +181,18 @@ document.querySelectorAll('.modal-overlay').forEach(ov => {
 document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeAllModals(); });
 
 // ----- admin button -----
+// ----- admin button (visible only when scrolled to footer) -----
+const adminBtnEl = $('adminBtn');
+const footerEl = document.querySelector('.footer');
+if (adminBtnEl && footerEl && 'IntersectionObserver' in window) {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      adminBtnEl.classList.toggle('visible', entry.isIntersecting);
+    });
+  }, { threshold: 0.05 });
+  obs.observe(footerEl);
+}
+
 $('adminBtn')?.addEventListener('click', () => {
   if (tok.has()) openAdminPanel();
   else openModal('loginModal');
@@ -270,8 +282,8 @@ $('newsForm')?.addEventListener('submit', async (e) => {
 
   let image_base64 = $('newsImageExisting').value || null;
   if (imageFile) {
-    if (imageFile.size > 5 * 1024 * 1024) {
-      alert('Plik za duży (max 5 MB)');
+    if (imageFile.size > 20 * 1024 * 1024) {
+      alert('Plik za duży (max 20 MB)');
       return;
     }
     image_base64 = await fileToBase64(imageFile);
@@ -372,8 +384,8 @@ async function deleteNews(id) {
 $('newsImage')?.addEventListener('change', async (e) => {
   const file = e.target.files[0];
   if (!file) return;
-  if (file.size > 5 * 1024 * 1024) {
-    alert('Plik za duży (max 5 MB)');
+  if (file.size > 20 * 1024 * 1024) {
+    alert('Plik za duży (max 20 MB)');
     e.target.value = '';
     return;
   }

@@ -644,10 +644,17 @@ ul{list-style:none}
   cursor:pointer;
   z-index:900;
   display:flex;align-items:center;justify-content:center;
-  opacity:.5;
-  transition:all var(--t-fast);
+  opacity:0;
+  pointer-events:none;
+  transform:translateY(10px);
+  transition:opacity .4s ease, transform .4s ease;
 }
-.admin-btn-fab:hover{opacity:1;transform:scale(1.08)}
+.admin-btn-fab.visible{
+  opacity:.45;
+  pointer-events:auto;
+  transform:translateY(0);
+}
+.admin-btn-fab.visible:hover{opacity:1;transform:scale(1.08)}
 .admin-btn-fab svg{width:20px;height:20px}
 
 /* ============================================
